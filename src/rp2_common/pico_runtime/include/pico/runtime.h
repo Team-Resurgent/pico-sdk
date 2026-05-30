@@ -45,6 +45,7 @@ extern "C" {
  * This method is useful to set up the runtime after performing a watchdog or powman reboot
  * via scratch vector.
  */
+void __attribute__((section(".flashtext"))) boot2_init_clocks(void);
 void runtime_init(void);
 
 void runtime_run_initializers(void);

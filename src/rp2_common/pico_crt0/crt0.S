@@ -478,6 +478,8 @@ _call_xip_setup:
     // In a NO_FLASH binary, don't perform .data etc copy, since it's loaded
     // in-place by the SRAM load. Still need to clear .bss
 #if !PICO_NO_FLASH
+    bl boot2_init_clocks
+
     adr r4, data_cpy_table
 
     // assume there is at least one entry
